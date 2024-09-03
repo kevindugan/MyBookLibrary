@@ -1,0 +1,34 @@
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_USER: ${DB_USER}
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  application:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM python:3.12-bookworm
+        RUN apt update && \
+            pip install -U pip && \
+            pip install fastapi uvicorn[standard] sqlalchemy psycopg2 && \
+            useradd --shell /bin/bash --create-home book-api-user
+        USER book-api-user
+        WORKDIR /app
+        COPY .env *.py /app
+        COPY router/*.py /app/router/
+        EXPOSE 8530
+        CMD ["python", "booksApp.py"]
+    depends_on:
+      - database
+    restart: unless-stopped
+    ports:
+      - 80:8530
+
+volumes:
+  db-data:
