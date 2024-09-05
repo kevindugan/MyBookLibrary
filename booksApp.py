@@ -1,12 +1,13 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
-from router import categorization
+from router import categorization, books
 
 api = FastAPI()
 
 # Router Endpoints
 api.include_router(categorization.router)
+api.include_router(books.router)
 
 @api.get("/api/v1")
 async def home() -> dict:

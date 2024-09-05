@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, VARCHAR, ForeignKey, Uuid
 from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
@@ -8,3 +8,12 @@ class CategoriesTB(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     cat_id = Column(String(9), nullable=False)
     cat_path = Column(String, nullable=False)
+    
+class BooksTB(Base):
+    __tablename__ = "books"
+    id = Column(Uuid, primary_key=True)
+    title = Column(String, nullable=False)
+    author = Column(String, nullable=False)
+    isbn = Column(Integer, nullable=True)
+    cover_art = Column(VARCHAR, nullable=True)
+    category = Column("category", Integer, ForeignKey("categories.id"))

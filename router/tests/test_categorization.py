@@ -50,11 +50,11 @@ def test_search_categories(db_session):
     assert response.status_code == 200
     assert response.json() == {
         "result": [
-            "Science / History",
-            "Architecture / History / Medieval",
-            "Fiction / Romance / History / Medieval",
-            "Fiction / Romance / History / Victorian",
-            "History / Ancient / Rome",
+            {"id": "SCI034000", "name": "Science / History"},
+            {"id": "ARC005030", "name": "Architecture / History / Medieval"},
+            {"id": "FIC027150", "name": "Fiction / Romance / History / Medieval"},
+            {"id": "FIC027170", "name": "Fiction / Romance / History / Victorian"},
+            {"id": "HIS002020", "name": "History / Ancient / Rome"},
         ]
     }
     
@@ -79,7 +79,7 @@ def test_search_categories_limit_2(db_session):
     assert len(response.json()["result"]) == 2
     assert response.json() == {
         "result": [
-            "Science / History",
-            "Architecture / History / Medieval",
+            {"id": "SCI034000", "name": "Science / History"},
+            {"id": "ARC005030", "name": "Architecture / History / Medieval"},
         ]
     }

@@ -9,7 +9,8 @@ from models import CategoriesTB
 router = APIRouter(tags=["categories"], prefix="/api/v1/categories")
 
 @router.get("/search")
-async def search(query: str, limit: int = 10, db: Session = Depends(get_db)) -> dict:    
+async def search(query: str, limit: int = 10, db: Session = Depends(get_db)) -> dict:
+    labels = ["id", "name"]
     sql_query = (
         select(
             CategoriesTB.cat_id,
@@ -22,7 +23,7 @@ async def search(query: str, limit: int = 10, db: Session = Depends(get_db)) -> 
     )
     
     try:
-        search_results = [it[1] for it in db.execute(sql_query).all()]
+        search_results = [dict(zip(labels,it)) for it in db.execute(sql_query).all()]
     except exc.OperationalError as e:
         raise HTTPException(status_code=400, detail="unknown error")
 
@@ -30,7 +31,12 @@ async def search(query: str, limit: int = 10, db: Session = Depends(get_db)) -> 
     pattern = compile(f"^{query.lower()}|[| ]{query.lower()}")
     def rank(key: str):
         return sum(2**idx * int(pattern.search(it.lower()) is not None) for idx,it in enumerate(reversed(key.split('|'))))
-    hits: list[tuple[float,str]] = sorted([(rank(it), it) for it in search_results])
+    hits: list[tuple[float,dict]] = sorted([(rank(it["name"]), it) for it in search_results], key=lambda x: (x[0], x[1]["name"]))
 
-    return {"result": [it[1].replace("|", " / ") for it in hits[:limit]]}
+    return {"result": [
+        {
+            key: val if key != "name" else val.replace("|", " / ")
+            for key,val in it[1].items()
+        } for it in hits[:limit]
+    ]}
     
