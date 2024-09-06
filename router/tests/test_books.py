@@ -112,6 +112,34 @@ def test_list_books_with_cover(db_session):
         ]
     }
     
+def test_list_books_with_isbn(db_session):
+    db_session.add_all([
+        CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
+        CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
+    ])
+    db_session.commit()
+    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(3)]
+    db_session.add_all([
+        BooksTB(title="Book 1", author="Someone", category="1", id=id_list[0]),
+        BooksTB(title="Book 2", author="Someone", category="2", id=id_list[1], isbn="9780534349417"),
+        BooksTB(title="Other Book", author="Someone Else", category="2", id=id_list[2], isbn="9780534349517"),
+    ])
+    db_session.commit()
+    
+    client = get_client(db_session)
+    
+    # List all, some have cover
+    response = client.get("/api/v1/books/list")
+    assert response.status_code == 200
+    assert response.json() == {
+        "result": [
+            {"isbn": None, "unique_id": str(id_list[0]), "title": "Book 1", "author": "Someone", "category": "Category / Sub Category", "cover_art": None},
+            {"isbn": "9780534349417", "unique_id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "Category / Other Sub Category", "cover_art": None},
+            {"isbn": "9780534349517", "unique_id": str(id_list[2]), "title": "Other Book", "author": "Someone Else", "category": "Category / Other Sub Category", "cover_art": None},
+        ]
+    }
+    
+    
 def test_list_books_by_category(db_session):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
@@ -159,7 +187,8 @@ def test_add_new_book(db_session):
     newBook = {
         "title": "New Book Title",
         "author": "Someone New",
-        "category": "CAT002000"
+        "category": "CAT002000",
+        "isbn": "9780534349417"
     }
     post_response = client.post("/api/v1/books/add", json=newBook)
     assert post_response.status_code == 200, post_response.text

@@ -8,7 +8,7 @@ class BookItem(BaseModel):
     title: str
     author: str
     category: str
-    isbn: Optional[int] = None
+    isbn: Optional[str] = None
     cover_art: Optional[str] = None
     
 class BookCreate(BaseModel):
@@ -16,7 +16,7 @@ class BookCreate(BaseModel):
     title: str
     author: str
     category: str
-    isbn: Optional[int] = None
+    isbn: Optional[str] = None
     cover_art: Optional[str] = None
     
     @field_validator("category")
