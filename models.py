@@ -6,8 +6,8 @@ Base = declarative_base()
 class CategoriesTB(Base):
     __tablename__ = "categories"
     id = Column(Integer, primary_key=True, autoincrement=True)
-    cat_id = Column(String(9), nullable=False)
-    cat_path = Column(String, nullable=False)
+    cat_id = Column(String(9), nullable=False, unique=True)
+    cat_path = Column(String, nullable=False, unique=True)
     
 class BooksTB(Base):
     __tablename__ = "books"
