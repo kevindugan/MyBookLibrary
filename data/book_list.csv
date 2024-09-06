@@ -1,4 +1,4 @@
-# Title, Author, Category, ISBN, Cover Path
-The Great Gatsby, F. Scott Fitzgerald, Fiction, , gatsby.jpg
-Harry Potter and the Goblet of Fire, J. K. Rowling, Fiction, , harry_potter_4.jpg
-Calculus: Early Vectors, Stewart, Math, , stewart_calculus.jpg
+# Book Id, Title, Author, Category, ISBN, Cover Path
+, The Great Gatsby, F. Scott Fitzgerald, FIC004000, , gatsby.jpg
+, Harry Potter and the Goblet of Fire, J. K. Rowling, JUV037000, , harry_potter_4.jpg
+, Calculus: Early Vectors, Stewart, MAT005000, , stewart_calculus.jpg

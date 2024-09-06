@@ -20,8 +20,8 @@ services:
             useradd --shell /bin/bash --create-home book-api-user
         USER book-api-user
         WORKDIR /app
-        COPY .env *.py /app
-        COPY router/*.py /app/router/
+        COPY --chown=book-api-user .env *.py /app
+        COPY --chown=book-api-user router/*.py /app/router/
         EXPOSE 8530
         CMD ["python", "booksApp.py"]
     depends_on:
