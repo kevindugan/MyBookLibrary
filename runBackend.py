@@ -1,13 +1,7 @@
 import uvicorn
-from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
-from router import categorization, books
 
-api = FastAPI()
-
-# Router Endpoints
-api.include_router(categorization.router)
-api.include_router(books.router)
+from backend.backendManager import api
 
 @api.get("/api/v1")
 async def home() -> dict:
@@ -19,7 +13,7 @@ async def redirect():
 
 if __name__ == "__main__":
     uvicorn.run(
-        "booksApp:api",
+        "runBackend:api",
         host="0.0.0.0",
         port=8530,
     )

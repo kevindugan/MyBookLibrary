@@ -3,8 +3,9 @@
 Get book categories from [BookShop.org](http://bookshop.org)
 
 ```bash
-docker container run --rm -v ${PWD}:/books_app \
+docker container run --rm -v ${PWD}/backend:/books_app \
                      --network mybooklibrary_default \
+                     --env-file .env \
                      -it python:3.12-bookworm bash -c \
                         "apt update && \
                          apt install -y postgresql && \

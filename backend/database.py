@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, URL
 from sqlalchemy.orm import sessionmaker
-from config import config
+
+from .config import config
 
 def get_db():
     url = URL.create(

@@ -1,12 +1,13 @@
 import pytest
-from models import CategoriesTB
 from fastapi.testclient import TestClient
+
+from ...models import CategoriesTB
 
 @pytest.fixture
 def db_session(postgresql):
     from sqlalchemy import URL, create_engine
     from sqlalchemy.orm import sessionmaker
-    from models import Base
+    from ...models import Base
 
     url = URL.create(
         "postgresql",
@@ -25,8 +26,8 @@ def db_session(postgresql):
     db.close()
     
 def get_client(session) -> TestClient:
-    from booksApp import api
-    from database import get_db
+    from ...backendManager import api
+    from ...database import get_db
     api.dependency_overrides[get_db] = lambda: session
     return TestClient(app=api)
     

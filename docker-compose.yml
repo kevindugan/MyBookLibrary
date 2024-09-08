@@ -20,10 +20,11 @@ services:
             useradd --shell /bin/bash --create-home book-api-user
         USER book-api-user
         WORKDIR /app
-        COPY --chown=book-api-user .env *.py /app
-        COPY --chown=book-api-user router/*.py /app/router/
+        COPY --chown=book-api-user .env runBackend.py /app
+        COPY --chown=book-api-user backend/*.py /app/backend/
+        COPY --chown=book-api-user backend/router/*.py /app/backend/router/
         EXPOSE 8530
-        CMD ["python", "booksApp.py"]
+        CMD ["python", "runBackend.py"]
     depends_on:
       - database
     restart: unless-stopped

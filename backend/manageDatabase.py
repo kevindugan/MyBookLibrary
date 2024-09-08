@@ -6,12 +6,16 @@ from sqlalchemy.orm import sessionmaker
 from csv import DictWriter, DictReader
 from base64 import b64encode, b64decode
 from os.path import splitext
+from os import environ
 from models import Base, CategoriesTB, BooksTB
 from uuid import uuid4
 from re import compile, fullmatch
 from pathlib import Path
 
-config = dotenv_values(".env")
+if Path(".env").exists():
+    config = dotenv_values(".env")
+else:
+    config = {it: environ[it] for it in ["DB_USER", "DB_PASS", "DB_PORT", "DB_NAME"]}
 
 def init_db(host):
     """Initialize the database from defined models"""

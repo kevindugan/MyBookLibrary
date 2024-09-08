@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
-from database import get_db
 from sqlalchemy import select, or_, exc
 from sqlalchemy.orm import Session
 from re import compile
 from urllib.parse import unquote
 
-from models import CategoriesTB
+from ..models import CategoriesTB
+from ..database import get_db
 
 router = APIRouter(tags=["categories"], prefix="/api/v1/categories")
 

@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
-from database import get_db
 from sqlalchemy import select, exc
 from sqlalchemy.orm import Session
 from uuid import uuid4
 
-from models import BooksTB, CategoriesTB
-from schema import BookItem, BookCreate
+from ..models import BooksTB, CategoriesTB
+from ..schema import BookItem, BookCreate
+from ..database import get_db
 
 router = APIRouter(tags=["books"], prefix="/api/v1/books")
 
