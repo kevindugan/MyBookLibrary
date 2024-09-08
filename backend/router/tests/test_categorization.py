@@ -1,37 +1,7 @@
-import pytest
-from fastapi.testclient import TestClient
 
 from ...models import CategoriesTB
-
-@pytest.fixture
-def db_session(postgresql):
-    from sqlalchemy import URL, create_engine
-    from sqlalchemy.orm import sessionmaker
-    from ...models import Base
-
-    url = URL.create(
-        "postgresql",
-        username=postgresql.info.user,
-        password=postgresql.info.password,
-        host=postgresql.info.host,
-        port=postgresql.info.port,
-        database=postgresql.info.dbname
-    )
-    engine = create_engine(url, echo=False)
-    Base.metadata.create_all(engine)
-    localSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
     
-    db = localSession()
-    yield db
-    db.close()
-    
-def get_client(session) -> TestClient:
-    from ...backendManager import api
-    from ...database import get_db
-    api.dependency_overrides[get_db] = lambda: session
-    return TestClient(app=api)
-    
-def test_search_categories(db_session):
+def test_search_categories(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="ANT000000", cat_path="Antiques & Collectibles|General"),
         CategoriesTB(cat_id="ANT001000", cat_path="Antiques & Collectibles|Americana"),
@@ -44,7 +14,7 @@ def test_search_categories(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # Get query endpoint
     response = client.get("/api/v1/categories/search?query=his")
@@ -59,7 +29,7 @@ def test_search_categories(db_session):
         ]
     }
     
-def test_search_categories_limit_2(db_session):
+def test_search_categories_limit_2(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="ANT000000", cat_path="Antiques & Collectibles|General"),
         CategoriesTB(cat_id="ANT001000", cat_path="Antiques & Collectibles|Americana"),
@@ -72,7 +42,7 @@ def test_search_categories_limit_2(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # Get query endpoint
     response = client.get("/api/v1/categories/search?query=his&limit=2")
@@ -85,7 +55,7 @@ def test_search_categories_limit_2(db_session):
         ]
     }
     
-def test_search_multi_word(db_session):
+def test_search_multi_word(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="ANT000000", cat_path="Antiques & Collectibles|General"),
         CategoriesTB(cat_id="ANT001000", cat_path="Antiques & Collectibles|Americana"),
@@ -97,7 +67,7 @@ def test_search_multi_word(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # Get query endpoint
     response = client.get("/api/v1/categories/search?query=magi%20fant")

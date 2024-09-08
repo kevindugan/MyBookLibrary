@@ -1,39 +1,10 @@
-import pytest
-from fastapi.testclient import TestClient
+
 from uuid import uuid3, NAMESPACE_OID
 from json import dumps
 
 from ...models import BooksTB, CategoriesTB
 
-@pytest.fixture
-def db_session(postgresql):
-    from sqlalchemy import URL, create_engine
-    from sqlalchemy.orm import sessionmaker
-    from ...models import Base
-
-    url = URL.create(
-        "postgresql",
-        username=postgresql.info.user,
-        password=postgresql.info.password,
-        host=postgresql.info.host,
-        port=postgresql.info.port,
-        database=postgresql.info.dbname
-    )
-    engine = create_engine(url, echo=False)
-    Base.metadata.create_all(engine)
-    localSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-    
-    db = localSession()
-    yield db
-    db.close()
-    
-def get_client(session) -> TestClient:
-    from ...backendManager import api
-    from ...database import get_db
-    api.dependency_overrides[get_db] = lambda: session
-    return TestClient(app=api)
-
-def test_list_books_all(db_session):
+def test_list_books_all(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
@@ -47,7 +18,7 @@ def test_list_books_all(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # List all endpoint
     response = client.get("/api/v1/books/list")
@@ -60,7 +31,7 @@ def test_list_books_all(db_session):
         ]
     }
     
-def test_list_books_limit(db_session):
+def test_list_books_limit(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
@@ -77,7 +48,7 @@ def test_list_books_limit(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # List all endpoint
     response = client.get("/api/v1/books/list?limit=2")
@@ -99,7 +70,7 @@ def test_list_books_limit(db_session):
     #     ]
     # }
 
-def test_list_books_with_cover(db_session):
+def test_list_books_with_cover(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
@@ -113,7 +84,7 @@ def test_list_books_with_cover(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # List all, some have cover
     response = client.get("/api/v1/books/list")
@@ -126,7 +97,7 @@ def test_list_books_with_cover(db_session):
         ]
     }
     
-def test_list_books_with_isbn(db_session):
+def test_list_books_with_isbn(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
@@ -140,7 +111,7 @@ def test_list_books_with_isbn(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # List all, some have cover
     response = client.get("/api/v1/books/list")
@@ -154,7 +125,7 @@ def test_list_books_with_isbn(db_session):
     }
     
     
-def test_list_books_by_category(db_session):
+def test_list_books_by_category(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
@@ -170,7 +141,7 @@ def test_list_books_by_category(db_session):
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # List all books, ordered by category,author,title
     response = client.get("/api/v1/books/list-by-category")
@@ -184,14 +155,14 @@ def test_list_books_by_category(db_session):
         ]
     }
 
-def test_add_new_book(db_session):
+def test_add_new_book(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
     ])
     db_session.commit()
     
-    client = get_client(db_session)
+    client = helpers.get_client(db_session)
     
     # Verify that books are empty
     response = client.get("/api/v1/books/list")
