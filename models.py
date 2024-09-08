@@ -16,4 +16,4 @@ class BooksTB(Base):
     author = Column(String, nullable=False)
     isbn = Column(VARCHAR, nullable=True)
     cover_art = Column(VARCHAR, nullable=True)
-    category = Column("category", Integer, ForeignKey("categories.id"))
+    category = Column("category", Integer, ForeignKey("categories.id"), nullable=True)

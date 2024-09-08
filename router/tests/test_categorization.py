@@ -83,3 +83,28 @@ def test_search_categories_limit_2(db_session):
             {"id": "ARC005030", "name": "Architecture / History / Medieval"},
         ]
     }
+    
+def test_search_multi_word(db_session):
+    db_session.add_all([
+        CategoriesTB(cat_id="ANT000000", cat_path="Antiques & Collectibles|General"),
+        CategoriesTB(cat_id="ANT001000", cat_path="Antiques & Collectibles|Americana"),
+        CategoriesTB(cat_id="ARC005030", cat_path="Architecture|History|Medieval"),
+        CategoriesTB(cat_id="FIC027150", cat_path="Fiction|Romance|History|Medieval"),
+        CategoriesTB(cat_id="FIC027170", cat_path="Fiction|Romance|History|Victorian"),
+        CategoriesTB(cat_id="OCC028000", cat_path="Body, Mind & Spirit|Magick Studies"),
+        CategoriesTB(cat_id="JUV037000", cat_path="Juvenile Fiction / Fantasy & Magic"),
+    ])
+    db_session.commit()
+    
+    client = get_client(db_session)
+    
+    # Get query endpoint
+    response = client.get("/api/v1/categories/search?query=magi%20fant")
+    assert response.status_code == 200
+    assert response.json() == {
+        "result": [
+            {"id": "JUV037000", "name": "Juvenile Fiction / Fantasy & Magic"},
+            {"id": "OCC028000", "name": "Body, Mind & Spirit / Magick Studies"}
+        ]
+    }
+    

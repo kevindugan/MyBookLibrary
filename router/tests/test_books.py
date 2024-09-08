@@ -65,11 +65,14 @@ def test_list_books_limit(db_session):
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
     ])
     db_session.commit()
-    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(3)]
+    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(6)]
     db_session.add_all([
         BooksTB(title="Book 1", author="Someone", category="1", id=id_list[0]),
         BooksTB(title="Book 2", author="Someone", category="2", id=id_list[1]),
         BooksTB(title="Other Book", author="Someone Else", category="2", id=id_list[2]),
+        BooksTB(title="Other Book 1", author="Someone Else", category="2", id=id_list[3]),
+        BooksTB(title="Book 2", author="Someone", category="1", id=id_list[4]),
+        BooksTB(title="Other Book", author="Someone Else", category="2", id=id_list[5]),
     ])
     db_session.commit()
     
@@ -84,6 +87,16 @@ def test_list_books_limit(db_session):
             {"unique_id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "Category / Other Sub Category", "cover_art": None, "isbn": None},
         ]
     }
+    
+    # Test Offset
+    # response = client.get("/api/v1/books/list?limit=2&page=2")
+    # assert response.status_code == 200
+    # assert response.json() == {
+    #     "result": [
+    #         {"unique_id": str(id_list[4]), "title": "Book 2", "author": "Someone", "category": "Category / Sub Category", "cover_art": None, "isbn": None},
+    #         {"unique_id": str(id_list[5]), "title": "Other Book", "author": "Someone Else", "category": "Category / Other Sub Category", "cover_art": None, "isbn": None}
+    #     ]
+    # }
 
 def test_list_books_with_cover(db_session):
     db_session.add_all([
@@ -120,7 +133,7 @@ def test_list_books_with_isbn(db_session):
     db_session.commit()
     id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(3)]
     db_session.add_all([
-        BooksTB(title="Book 1", author="Someone", category="1", id=id_list[0]),
+        BooksTB(title="Book 1", author="Someone", id=id_list[0]),
         BooksTB(title="Book 2", author="Someone", category="2", id=id_list[1], isbn="9780534349417"),
         BooksTB(title="Other Book", author="Someone Else", category="2", id=id_list[2], isbn="9780534349517"),
     ])
@@ -133,9 +146,9 @@ def test_list_books_with_isbn(db_session):
     assert response.status_code == 200
     assert response.json() == {
         "result": [
-            {"isbn": None, "unique_id": str(id_list[0]), "title": "Book 1", "author": "Someone", "category": "Category / Sub Category", "cover_art": None},
             {"isbn": "9780534349417", "unique_id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "Category / Other Sub Category", "cover_art": None},
             {"isbn": "9780534349517", "unique_id": str(id_list[2]), "title": "Other Book", "author": "Someone Else", "category": "Category / Other Sub Category", "cover_art": None},
+            {"isbn": None, "unique_id": str(id_list[0]), "title": "Book 1", "author": "Someone", "category": None, "cover_art": None},
         ]
     }
     
@@ -146,12 +159,13 @@ def test_list_books_by_category(db_session):
         CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
     ])
     db_session.commit()
-    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(4)]
+    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(5)]
     db_session.add_all([
         BooksTB(title="Other Book", author="New Someone", category="2", id=id_list[0]),
         BooksTB(title="Book 1", author="Someone", category="2", id=id_list[1]),
         BooksTB(title="Book 2", author="Someone", category="1", id=id_list[2]),
         BooksTB(title="A Book 2", author="Someone", category="1", id=id_list[3]),
+        BooksTB(title="No Cat", author="Unknown", id=id_list[4])
     ])
     db_session.commit()
     

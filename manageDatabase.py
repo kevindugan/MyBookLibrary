@@ -82,7 +82,7 @@ def ingest_db_books(host, filename: Path):
             "author": it["author"].strip(),
             "isbn": it["isbn"].strip() if it["isbn"].strip() != "" else None,
             "cover_art": image_to_b64( (filename.parent / it["cover_art"].strip()).absolute() ) if it["cover_art"].strip() != "" else None,
-            "category": category_mapping[it["category"].strip()]
+            "category": category_mapping[it["category"].strip()] if it["category"].strip() != "" else None
         } for it in dict_reader]
 
     with SessionLocal() as session:
