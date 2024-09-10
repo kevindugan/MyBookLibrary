@@ -7,7 +7,11 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "donjayamanne.python-extension-pack"
+                "donjayamanne.python-extension-pack",
+                "Vue.volar",
+                "ms-playwright.playwright",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
             ],
             "settings": {
                 "editor.rulers": [ 80 ],
@@ -15,5 +19,6 @@
             }
         }
     },
-    "remoteUser": "book-api-user"
+    "remoteUser": "book-api-user",
+    "runArgs": ["-p=80:5173"]
 }

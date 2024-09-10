@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 from dotenv import dotenv_values
-from sqlalchemy import create_engine, URL, select
+from sqlalchemy import create_engine, URL, select, or_
 from sqlalchemy.orm import sessionmaker
 from csv import DictWriter, DictReader
 from base64 import b64encode, b64decode
@@ -126,7 +126,7 @@ def dump_db(host, dest: Path):
                 CategoriesTB.cat_id,
                 BooksTB.isbn,
                 BooksTB.cover_art)
-            .join(CategoriesTB, BooksTB.category == CategoriesTB.id)
+            .join(CategoriesTB, BooksTB.category == CategoriesTB.id, isouter=True)
         )
         
         books = [{
@@ -135,8 +135,9 @@ def dump_db(host, dest: Path):
             "author": it.author,
             "isbn": it.isbn,
             "category": it.cat_id,
-            "cover_art": b64_to_image(it.cover_art, dest)
+            "cover_art": b64_to_image(it.cover_art, dest) if it.cover_art is not None else None
         } for it in session.execute(book_query).mappings().all()]
+        print(len(books))
 
         with open(dest/"books.csv", "w") as ofile:
             field_names = ["id", "title", "author", "isbn", "category", "cover_art"]

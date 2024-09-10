@@ -1,7 +1,7 @@
 FROM python:3.12-bookworm
 
 RUN apt update && \
-    apt install -y vim less jq yq git-lfs gnupg2 postgresql && \
+    apt install -y vim less jq yq git-lfs gnupg2 postgresql npm && \
     pip install -qU pip && \
     # Install python packages
     pip install fastapi uvicorn[standard] sqlalchemy psycopg2 pytest-cov pytest-postgresql httpx python-dotenv && \

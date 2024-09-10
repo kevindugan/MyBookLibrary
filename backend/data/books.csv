@@ -1,4 +1,126 @@
 id,title,author,isbn,category,cover_art
-51dd8984-21d9-4495-a79a-7dc65dc62833,Calculus: Early Vectors,James Stewart,9780534349417,MAT005000,8172449e-92b0-49cd-9fb2-24e22ab62eb6.jpg
-8a7bf5e8-43c8-42fc-96ee-6fac657f7c3d,The Great Gatsby,F. Scott Fitzgerald,9780743273565,FIC004000,40c17518-4edc-4f9b-a3ac-0aafc46fc172.jpg
-2f8393b2-38c9-4226-8c66-d321727183b0,Harry Potter and the Goblet of Fire,J. K. Rowling,9780439139595,JUV037000,e58e3e10-6922-4c4b-953e-7328340d78c8.jpg
+80000184-ed34-4c94-b72a-6d168f5f178a,"Harry Potter and the Sorcerer's Stone (Harry Potter, 1)","Rowling, J. K.",1338878921,,f68ec2ab-4fb5-4933-93d2-6c22bd487f4c.jpg
+c6413d31-9663-4a53-bd97-e0ac70a7ea43,Introduction to Nuclear Concepts for Engineers,"Mayo, Robert M.",0894484540,,7f8443bc-5c62-4bfd-acf3-ee4e3937b427.jpg
+1562f375-bab6-4c9b-ba6e-337aaee8643d,"Calculus: Early Vectors, Preliminary Edition","Stewart, James",0534349412,,668c459b-fe0c-4033-b69c-cb9fef5e0867.jpg
+698ca3da-f1c6-48b3-9167-7f26358f4581,Nuclear Reactor Analysis,"Duderstadt, James J.",9780471223634,,50cf5219-8afa-425f-9805-e83215ff5ebf.jpg
+8d21aeb6-a294-4ed1-b66b-5b80dbe2a2ca,Numerical Methods for Engineers and Scientists,"Hoffman, Joe D.",0824704436,,8f012e31-b378-4536-97fd-511a71bcff3d.jpg
+3b8658c0-b02f-42f0-a79b-21670e8d9468,"Atoms, Radiation, and Radiation Protection","Turner, James E.",9783527406067,,7f9781c7-7a17-4d36-b044-568fe41989fa.jpg
+2779a253-3491-4477-b95d-83db96c62c78,Nuclear Reactor Physics (Second edition),"Stacey, Weston M.",3527406794,,b1c94e89-ddd1-485d-9ad6-ab2ab3d813a2.jpg
+47d18c32-46f6-4f62-a36c-2f6714d4acba,Introduction to Discrete Structures for Computer Science and Engineering (Addison-Wesley Expert Advisor Series),"Preparata, and Raymond T. Yeh Franco P.",0201059681,,e4e07a9f-e18f-469e-9fd1-e2920f730792.jpg
+0c0e850b-7667-4ab6-a889-6b81e9210df4,Engineering and Scientific Computing with Scilab,"Gomez, Claude",0817640096,,a7ce62bd-6c0e-4413-9c54-283547b15be7.jpg
+70ac8689-7cfc-41e0-a4ec-76e22e1ce10c,Précis de neutronique,"Reuss, Paul",2868836372,,6af2cd1e-c8a6-4f3a-b09a-6c78e22485b3.jpg
+7e648dcf-3722-4629-aca2-0bf7a0b803b7,Modern Physics,"Serway, Raymond A.",0534493394,,59ae99ba-73d8-43e3-8e19-5f8ea284de72.jpg
+db6d9452-4d0d-485c-a183-a1563231ad7c,Radiation Detection and Measurement,"Knoll, Glenn F.",0471073385,,4e1a9276-4672-4b11-b5a3-b762e819e827.jpg
+2a2e1663-55a6-4e12-bce3-bcfb971646d0,Fundamentals of Nuclear Reactor Physics,"D., Elmer E. Lewis Ph.",0123706319,,c36797a5-46ba-4f66-a6ae-3df783b80f85.jpg
+abba70e7-dc8b-461b-8f6b-1cf333d039c9,La neutronique (CEA/Editions du Moniteur),"atomique, Commissariat à l'énergie",228111371X,,543922d7-a853-45d8-bc49-f3f65f119c36.jpg
+ab025cdb-0920-481a-9113-4f38aa0e5ddd,Au coeur de la matière : 50 ans de recherches au CEA de Saclay,"Lefebvre, Véronique",2749100291,,ccf894ed-2bac-4e04-8e87-e78b1486438c.jpg
+ec3f9b87-fd54-453e-b7c5-ee060c4bac20,"Table of Integrals, Series and Products, Corrected and Enlarged Edition",";Jeffrey Gradshtein, Alan;Ryzhik, I.M. I. S.",0122947606,,583385b4-7559-4c6e-90d3-ecb0c344da47.jpg
+146119fc-85d9-4443-9f84-65d2ec5f522c,Fortran 95/2003 for Scientists & Engineers,"Chapman, Stephen",0073191574,,e0102584-034e-45e6-8d40-072254fa9b26.jpg
+d0b07598-76dc-4478-996c-124d35a92a36,Solving Differential Equations with Maple V: Release 4 (Brooks / Cole Symbolic Computation Series),"Barrow, David",0534345557,,830516a1-863b-42db-ad71-66aeced36c5c.jpg
+b1c3b63c-a433-4c68-b274-093bb74167f5,"Labs with Maple for Single Variable Calculus Concepts and Contexts, 3rd edition","Stewart, James",053441026X,,6123bb89-6643-4899-b7cd-ec7c26e60346.jpg
+1c9345ff-458b-41dd-8879-be6fcb7c134c,A First Course in Computational Physics,"DeVries, Paul L.",076377314X,,082596ec-9cf0-4c5d-8356-e6ece8d81a7e.jpg
+ef4186dd-d0cd-4bc1-97af-157f49cc50c5,Nuclear Systems Volume I: Thermal Hydraulic Fundamentals,"Todreas, Neil E.",1560320516,,3ada8255-9ff5-441e-81e6-455e9d6cad98.jpg
+9bd7a7c2-91b5-469f-8f0d-8a624423704c,Numerical Heat Transfer and Fluid Flow (Computational Methods in Mechanics & Thermal Sciences),"Patankar, Suhas",0891165223,,e06866b7-ecd7-4630-a85a-f0375f4eee76.jpg
+a6233e46-519f-4c7e-9c5d-981e7e1c1546,"Theory and Practice of Finite Elements (Applied Mathematical Sciences, 159)","Ern, Alexandre",0387205748,,a4a07efe-3d90-4aaa-b4c6-b2193b1a7592.jpg
+77ed5068-73cf-49f4-b2a3-b0ea30037abf,"Applied Partial Differential Equations: With Fourier Series and Boundary Value Problems, 4th Edition","Haberman, Richard",0130652431,,142e83c6-6e29-405e-b464-8f878a4a003d.jpg
+0a76488d-99ac-4c50-95ff-838d43b76662,Numerical Methods for Partial Differential Equations (Computer Science and Scientific Computing),"Ames, William F.",012056761X,,b5375aa6-55c3-45f6-9c99-a0be9a6eebf2.jpg
+ab7514df-23a2-4580-9021-106b0773a3aa,Advanced Engineering Mathematics by clarence wylie (1966-08-01),"Wylie, C. Ray",,,
+9179470d-dbfe-4ff8-88c8-d34d7078df8e,Computational Methods of Neutron Transport,"Lewis, E. E.",0471092452,,0cb1a7ad-4930-41a8-a534-c358772ea6b5.jpg
+0874cee8-31f3-4b35-ae9e-f35c08e8a816,Computer Methods for Mathematical Computations,"Forsythe, George Elmer",9780131653320,,9b5db332-6573-41fd-be21-39428788e986.jpg
+ba80bee1-e433-42a6-9c77-58706c41c4ef,Differential Geometry (Dover Books on Mathematics),"Guggenheimer, Heinrich W.",0486634337,,eec1e83d-e47c-4781-96eb-36a021926a26.jpg
+94b516fe-1ac1-4171-8869-03b7db81812d,Principles of Mathematics,"Allendoerfer, Carl Barnett",007001390X,,f50fce04-160d-47aa-84e6-4b52ab7e4a3e.jpg
+b76b7d02-2286-4189-bc2a-588b69dc8577,Learning the UNIX Operating System (Nutshell Handbooks),"Todino-Gonguet, Grace",0937175161,,3c0c7bd5-a50c-4144-946a-727188041fd4.jpg
+79b402de-e9ef-46ac-8cd3-4c6500e82dcc,Parallel Scientific Computing in C++ and MPI: A Seamless Approach to Parallel Algorithms and their Implementation,"Karniadakis, George Em",0521520800,,a2cea4c8-3dd2-4388-8eb5-5fe0d2aacf47.jpg
+8b40c046-da30-469b-8476-03dfced89966,Introduction to computer science,"Gear, C. William",,,
+7ae22994-0d40-4af7-9a68-7b87a84346f6,Dictionnaire de Français,Collectif,2733806211,,afcb3059-0602-4ac2-8ef7-b3aa6d67da00.jpg
+29a65c4b-4f5a-4067-9d30-8d59503411cf,"C++ High Performance: Master the art of optimizing the functioning of your C++ code, 2nd Edition","Andrist, Bjorn",1839216549,,7c14ae8e-dae6-470b-9391-d3b6d3272bb9.jpg
+6d9aff52-4efa-4223-aa13-7cf4570d365d,Cracking the Coding Interview: 189 Programming Questions and Solutions (Cracking the Interview & Career),"McDowell, Gayle Laakmann",0984782869,,41ec4155-de34-4996-b956-018889191489.jpg
+b33f9f75-ea0a-4a01-b3ad-8a54cd159867,Introduction to the Finite Element Method,"Reddy, J. N.",9780070607415,,95d1ad2c-6056-4e22-b3d3-cfd329df8ad5.jpg
+a37868c9-0336-4e62-a3d9-e6abe123c6df,Parallel Programming with MPI,"Pacheco, Peter",1558603395,,ac6fe8ee-28ad-44b4-b1a7-323fd1685868.jpg
+35e2e1b6-7993-4211-afcf-368dbc54f896,Numerical Linear Algebra,"Trefethen, Lloyd N.",0898713617,,be0f053d-5bc1-4831-b4ff-2eaf4c04c51d.jpg
+dacec0b8-413a-47f5-b2c1-2005d76559e6,Design Patterns: Elements of Reusable Object-Oriented Software,"Gamma, Erich",0201633612,,61c9e8e7-6720-4c25-bd4d-43f77c936aa1.jpg
+1925ea8e-9f7f-44de-b0ce-f87e7743356f,Using Advanced MPI: Modern Features of the Message-Passing Interface (Scientific and Engineering Computation),"Gropp, William",0262527634,,d807c6a7-df0a-4903-85e7-2b48ef50e914.jpg
+7ecc7f00-7db2-4712-86fb-960447048083,"Perrine's Literature: Structure, Sound, and Sense","Arp, Thomas R.",141300654X,,965c8d32-7ccf-4249-9e1c-d09a634fd3b4.jpg
+38ff2154-2088-4b64-a273-78da2ba577a3,The Elements of Style (4th Edition),"Strunk, William",9780205313426,,22606cc4-0eec-4fa4-b425-e27e89e6e79e.jpg
+43474012-9405-480f-a3fd-cd0faab00f2f,"Style: Toward Clarity and Grace (Chicago Guides to Writing, Editing, and Publishing)","Williams, Joseph M.",0226899152,,89d83b9e-e18b-4f4a-94a2-951ed658a3e3.jpg
+8277089c-8421-4636-a730-ccd67ae081ed,Handbook of Knots,"Pawson, Des",0789423952,,2dbe5c20-3ba4-4e2d-bfe7-9d7e25643f6b.jpg
+e55bb593-6e4c-4fbc-a426-059cf6da5287,The Firefly Mini French/English Visual Dictionary,"Corbeil, Jean-Claude",1554071917,,e430a0e7-10a6-438b-9d46-726f1a0013be.jpg
+0a3c6cff-9cea-4c8b-85a8-37554c633773,2019 Boy Scout Requirements,Boy Scouts of America,0839532156,,02ba54b5-04b9-49f0-b447-28110f6aca9b.jpg
+fabfc6c3-404f-4450-800e-6ef6175a29d7,Order of the Arrow Handbook,Boy Scouts of America,0839549962,,ccd9f2c0-4562-4e85-b88c-8584d11ff7b9.jpg
+9173fe7e-d9ca-4fe5-9183-ef27dd9e977a,Citizenship in the Nation (Merit Badge Library),Boy Scouts of America,0839532482,,7926cd1c-1dd9-4fa3-a557-3a3708f89b65.jpg
+2b8ef09d-00e1-4c04-8141-0469a462f80a,Citizenship in the World (Merit Badge Series),Boy Scouts of America Staff,0839532601,,f51a8986-e5ec-4e05-bc70-44c92f29dd7c.jpg
+3dbdb054-a998-4927-bf01-e821e95db19e,Environmental Science (Merit Badge Series),Staff,0839533632,,1dd75189-b3d2-4076-b7a6-237e49136af0.jpg
+8215132d-6534-4f4b-9328-c6a771f9ca35,Premières poésies. 1829-1835 (French Edition),"Musset, Alfred de",,,
+102068be-57b9-4678-96bf-b59688c1717d,Bilingue - Les aventures d'Alice au pays des merveilles,"Carroll, Lewis",2266203606,,6d858071-d269-474b-8a88-e7d038a833de.jpg
+26602187-7c5a-4c0f-a4a8-88d4568bc748,"Dictionary of Project Management Terms, Third Edition","Ward, J. LeRoy",1890367451,,c873fa73-f71e-495b-9962-43d4d67ac61a.jpg
+5fd236c1-7589-4b1c-af24-db62a05fa5f4,Voyage Au Centre de La Terre Book (Level 1) (French Edition),"Verne, Jules",2090319178,,28d9da6a-1d92-4afe-bc19-54ab791e024a.jpg
+f0e4c48c-8168-45c1-ae8f-d0f3a8985f82,The Aggie Writer's Harbrace Handbook,"Miller, Suzanne Strobeck Webb, Loretta Gray Cheryl Glenn Robert Keith",141302663X,,d5bc0278-3164-446c-94bb-05a282f5d6dc.jpg
+2265994e-fa18-4975-8f0c-edce81a67deb,Plans de Paris: Paris street index and maps: Paris pratique par arrondissement,Pef,2707202398,,3be1fe43-6254-4c09-b3b6-56cef3936aae.jpg
+56733d1f-249d-451e-98b8-6a13feb5054c,Webelos Scout Book,Boy Scouts of America,0839532350,,2fcd9d71-5678-41a8-b777-0e3065bcb63d.jpg
+805a38ed-e8d4-43ff-a31d-8640e23409fe,Classical Mechanics,"Taylor, John R.",189138922X,,4cf89d24-c9cf-4786-97a1-aef25112a464.jpg
+8244b7ac-6ae1-4552-be8b-023fec9729d4,Multivariable Mathematics,"Williamson, Richard",0130672769,,f54be55c-e626-4143-9f8b-5b9b75d1bf90.jpg
+8d0ff52e-d24c-4e8a-bd2d-50a5ef4ee2e6,"Electrical Engineering: Principles and Applications, 4th Edition","Hambley, Allan R.",0131989227,,abb81d68-e549-48a1-a9b8-84a90cd86d4d.jpg
+5c4469f1-2e74-46c0-bc4e-41676316a109,Thermodynamics: An Engineering Approach (Customized Edition for Texas A&M),"Cengal, Yunus A.",9780077234881,,07e6cf92-f652-4eb6-942f-5f3f7d37447d.jpg
+e906945a-9d01-4013-ab3d-3d9bddae8ffc,Fundamentals of Differential Equations and Boundary Value Problems (Custom Edition for Texas A&M University),"Nagle, R. Kent",0536460434,,2e5ffd8f-3e71-477d-8f45-2bc7ad6a4c33.jpg
+e6b53f43-f527-4db6-8cb2-8ec50e7c6c2b,Introduction to Fluid Mechanics,"Fox, Robert W.",0471735582,,ab9a6608-5862-4d68-93c2-f27e3b5bac17.jpg
+f13dea05-e036-4a65-9195-6e8186c7fdc0,Mechanics of Materials,"Beer, Ferdinand",0077221400,,a444345e-28d6-4bfa-85e3-8a16380644d4.jpg
+71449cf7-f46a-4035-8721-ad15495a3c43,Fundamentals of Heat And Mass Transfer,"DeWitt, David P.",0471457280,,898d8dae-0d7a-46c8-92b1-0769e8c426c9.jpg
+c5e3ebc8-5de2-4a56-b167-55c33802a82b,Fundamentals of Materials Science and Engineering: An Integrated Approach,"Callister, William D.",0470125373,,a73a3f63-297b-4566-8d14-32876354b6df.jpg
+5dcf1a3e-805c-44d2-8c64-d0c053484b41,Engineering Mechanics: Dynamics,"Riley, William F.",0471053392,,67779a5c-f0c1-4d19-90e5-a04ef93f51d7.jpg
+b83c26e3-67af-4597-9a30-fea184996428,"Engineering Mechanics: Statics, 2nd Edition","Riley, William F.",0471053333,,aadf67e0-3fa8-4ace-b63c-c227d9a6cd82.jpg
+7b009400-ff0b-4c16-8e4b-55bdc6010f96,Chemistry and Chemical Reactivity (with General ChemistryNOW CD-ROM) (Available Titles CengageNOW),"Kotz, John C.",053499766X,,498251a1-845c-4003-8edb-c4ee11d20756.jpg
+ee76919a-2929-428b-9fd9-383f136dd39d,"Dont Panic,Volume II","Bassichis, William",0962467138,,f44f9902-4415-453f-8862-c14abf887b1e.jpg
+c767f922-48fd-44d7-99fd-5122795f9023,Don't Panic: A Guide to Introductory Physics for Students of Science and Engineering: Mechanics (Volume 1 (Mechanics)),"Bassichis, William H.",0962467146,,1a3e525b-548b-4a17-8722-14a0d1a3eb8d.jpg
+e22a9e39-2c5f-4dab-87fb-e7bd589c7bdd,University Physics with Modern Physics (12th Edition),"Young, Hugh D.",0321501217,,d3dffeb9-72a0-46f6-9034-2efbbfadfa23.jpg
+e4ab3ea9-dc96-4d90-93ae-693e2304f0fb,Politics In America: Texas Edition,"Dye, Thomas R.",0131917390,,f086c157-ed95-4081-bf2c-7218c4ca0f81.jpg
+1aeb070f-867f-4d57-965f-dfeeefe08055,Introduction to Psychology: Gateways to Mind and Behavior,"Coon, Dennis",0495091553,,ffdae5d0-4fe8-4098-a6df-8dc3662e7d42.jpg
+385f07c7-abfb-4535-abf2-d7a71332bf2e,"Principles of Engineering Economy, 8th Edition","Grant, Eugene L.",047163526X,,b7cb49b8-e12f-40a6-bc3b-4950db0cf386.jpg
+298fa945-a55b-4808-a135-f4305083dc94,The God Delusion,"Dawkins, Richard",0618680004,,6e749dbf-b8b0-4e69-bec9-a04749f9ab6a.jpg
+3f593b6e-f7cc-4a8d-8f6f-554ca32fe934,The Boy Scout Handbook,Boy Scouts of America,0839531052,,8626154d-eb0b-4751-b7be-d20cc410896b.jpg
+d0c2f576-a234-43e7-b29c-be6f03a5b443,The Great Gatsby: The Only Authorized Edition,"Fitzgerald, F. Scott",9780743273565,,bf62c6e9-364b-46c5-9c6b-eebeee0f8b6a.jpg
+95b13a8a-8caf-42e8-96af-5685cebf24a7,Hide This French Book,"Editors, Apa",9812464298,,9de99efa-13d0-441d-bc0f-c6fd53ef2192.jpg
+bc29aab9-7f79-4d95-be5a-8e16a038f353,"Atheist Manifesto: The Case Against Christianity, Judaism, and Islam","Onfray, Michel",161145008X,,6d71707c-ac8a-4b15-bfb2-24e7779ac672.jpg
+584c4beb-f967-43a7-bb11-fdc99c4f893d,Darwin: The Indelible Stamp,"Watson, James D.",0762421363,,07e3ccc1-cc4e-4152-a7f3-f047be32917c.jpg
+5e4654a5-7e86-4366-b77d-5073088afb6e,The Gospel of the Flying Spaghetti Monster,"Henderson, Bobby",0812976568,,1faf21bf-f955-49e6-92f3-db13bcbcf3ad.jpg
+1cc0487c-3ab2-4800-bf1d-2dc0a051547f,Real Analysis: A Long-Form Mathematics Textbook (The Long-Form Math Textbook Series),"Cummings, Jay",1077254547,,d8139d4f-f445-40b6-9c9b-f9746c20270e.jpg
+ac4fcd25-ab20-4afc-8148-a6c1cad0d953,Proofs: A Long-Form Mathematics Textbook (The Long-Form Math Textbook Series),"Cummings, Jay",,,
+4209beb3-bb0d-4090-bbab-e27b29768280,Introductory Functional Analysis with Applications,"Kreyszig, Erwin",0471504599,,a4cee72e-b728-49c3-af03-202b0b6cfe62.jpg
+c6d3e69f-ecf0-414a-b8cd-1b7f9c136a60,Vector and Tensor Analysis,"Lass, Harry",0070365202,,619c42a1-23ef-4a29-ada3-6ccb161ae18a.jpg
+8182f54a-8f4c-4535-855c-09f354af7e7c,University Algebra,"Wells, Webster",,,
+68b595c6-af5a-4c50-923b-11776e2919b7,The finite element method,"Zienkiewicz, O. C",0070840725,,72432030-2400-4bb0-935c-c8a51bf02104.jpg
+bcac6399-cb28-4f65-8f55-4f5aed1dba22,Harry Potter and the Deathly Hallows,"Rowling, J. K.",0545010225,,61472901-b1b3-4ad5-9844-6d95b6572c02.jpg
+9247f4ed-52fe-44b4-ab7d-236eac3fbedc,Harry Potter and the Half-Blood Prince (Book 6),"Rowling, J. K.",0439784549,,9b7e7377-5080-41de-b0ba-0f4c02cef394.jpg
+eedd9cff-35cd-44dd-9bfc-77f630d48627,"Harry Potter and the Goblet of Fire (Harry Potter, Book 4) (4)","Rowling, J. K.",0439139597,,94d796d6-25ff-4815-a37a-1e573475e734.jpg
+e4e18dd4-4dc0-4c84-846a-63b01ba91c69,The Essential Woodworker,"Wearing, Robert",0578060442,,7782cffb-ab84-4591-b5b0-bf2a44ccf91b.jpg
+792c1704-f102-4c1a-b183-354e5c6f1e80,The New Traditional Woodworker: From Tool Set to Skill Set to Mind Set (Popular Woodworking),"Tolpin, Jim",1440304289,,7c6e404f-aa6b-4723-8b03-6c88c0216f13.jpg
+a9e97ba3-179d-423d-8a26-e5b02ae54ef2,Understanding Wood Finishing,"Flexner, Bob",0762101911,,b1bf5202-f6dd-4264-8c0b-2bfcd96edabd.jpg
+df863dff-7bbd-473b-86ba-2f8f64a198c6,Astérix - La galère d'obélix - n°30,"Uderzo, Albert",2864970961,,10357826-9a69-467f-b388-f30b28563a90.jpg
+b640fbcf-8d8e-40a7-b237-bed1c344707f,How to Repair Your Car,"Brand, Paul",978-0-7603-2273-4,,f3497357-173f-468f-b098-6d5b2cfa5631.jpg
+eb851e9a-65b3-4dda-9ab7-0f3f6c4ae072,How to Repair Your Car (Motorbooks Workshop),"Brand, Paul",0760322732,,4a63daf9-cc3d-4095-8de8-9e42b0a7f718.jpg
+1adb3417-49a3-40de-877b-4290d8949e17,How to Operate Your Home - Professional Edition,"Feiza, Tom",098320182X,,adf7b75b-db82-4369-a3f9-b2447b45dd7d.jpg
+99be83ae-4eab-4dfd-9bb0-b29699ff1725,"Harry Potter and the Chamber of Secrets (Harry Potter, Book 2) (2)","Rowling, J. K.",0439064872,,b617d65b-3d0d-41b4-99e7-c034297c9009.jpg
+d806937e-038b-4701-a691-5799cc99fa80,"Harry Potter and the Prisoner of Azkaban (Harry Potter, Book 3) (3)","Rowling, J. K.",0439136350,,8f60e4f8-b8a9-4502-b34b-0967db249fff.jpg
+dc698e98-9784-40a2-bc06-10b9615afbff,Harry Potter and the Order of the Phoenix (Book 5),"Rowling, J. K.",9780439358064,,8aa19451-84e9-4079-9a33-b5fb83d0453f.jpg
+66e72c12-21a1-4c6d-b5ce-633a3c7dd57b,Cat Talk: What Your Cat Is Trying to Tell You,"Wilbourn, Carole",1879955008,,3c279922-6ae1-44b8-b609-8d557d5a4d30.jpg
+cc3e805f-f6b7-4882-8441-e6cb8f5f3d70,"Breaking Dawn (The Twilight Saga, Book 4)","Meyer, Stephenie",031606792X,,92ed75ef-ff46-45b8-99a8-a9e08712dbb5.jpg
+ef074631-c2c0-48e6-81cb-f68b6298774e,Complete Idiot's Guide to Living with a Cat (The Complete Idiot's Guide),Janik,0028612787,,9bd63f2e-bbdd-4beb-be51-8e190bd8832b.jpg
+9003b37e-49c1-4724-9c30-4ee9f3e1df38,"Go Get 'Em, Tiger! (A Hello!Lucky Book)",Hello!Lucky,1419739646,,05769a18-67e1-4b32-82d9-07db05b0fc65.jpg
+310a211f-b57b-4638-b8c3-a7983865c2a0,"You Need More Sleep: Advice from Cats (Cat Book, Funny Cat Book, Cat Gifts for Cat Lovers)","Marciuliano, Francesco",1452138915,,f6966f1b-d57e-4561-82d9-71adfc80c9f3.jpg
+de73ca89-3fce-4e0a-bcef-411bf62d459e,The Little Prince,"Saint-Exupéry, Antoine de",0156012197,,e2fbb70c-7af2-4cd5-beab-d780bc70a667.jpg
+23b1cecc-1e10-4b8e-bc3f-1c8a48587959,Still Life: A GMA Book Club Pick (A Novel),"Winman, Sarah",0593330765,,07618e28-33ad-41ff-8236-447fb064c31f.jpg
+6368fc24-4030-43b1-b336-d3bd1b868264,Kitchen Table Wisdom: Stories That Heal,"Remen, Rachel Naomi",1573226106,,f6b4745b-4124-44d6-966c-265c653105b1.jpg
+943636a5-371f-4e4f-bcc7-fe330473f49c,"Dancing with Cats: From the Creators of the International Best Seller Why Cats Paint (Cat Books, Crazy Cat Lady Gifts, Gifts for Cat Lovers, Cat Photography)","Silver, Burton",9781452128337,,a5ff16fe-f894-4159-bbbe-2db0b55a9b0d.jpg
+ec0a6677-eb34-4815-ad02-9fc75a0cc403,Essential Wordsworth (Essential Poets),"Wordsworth, William",088001170X,,47bee839-a4ac-4893-a9fd-55bcb4838c2b.jpg
+18564222-22b3-4efa-aae4-b1b37e1c4646,"The Federalist Papers: Alexander Hamilton, James Madison, John Jay","Hamilton, Alexander",0451625412,,d4e9a174-005d-4d5c-9adb-dcceb7aaea32.jpg
+8d5e5ec9-ac65-45fe-bdc6-3bb007f1fe82,Pride and Prejudice (Wordsworth Classics),"Austen, Jane",1853260002,,f321f445-0742-4a94-8874-ee284482ba4d.jpg
+4b7cc68e-487d-4cf9-bc4f-2a0ab90e8480,Codebreakers: The Inside Story of Bletchley Park,"Hinsley, Sir F. H.",0192801325,,7f9ab9f1-5f16-4da2-b1dd-23e273302da4.jpg
+dbd160c2-c424-4e75-bcd2-a849e8a36556,Persuasion (Dover Thrift Editions: Classic Novels),"Austen, Jane",9780486295558,,3d075c40-0018-4a9b-8076-1b0bbc3fa6da.jpg
+6a1190fe-6291-46d6-b5c8-ec1fd928ccbe,Utopia (Penguin Classics),"More, Thomas",9780140449105,,33f6ee67-3f4d-4b11-bedc-72af6a4fd42d.jpg
+f9e5ef68-2143-498f-b080-75af10ca922b,Much ADO about Nothing (Wordsworth Classics),"Shakespeare, William",9781853262548,,5210ae8f-4c7a-4f8c-a530-f4873f0f7254.jpg
+836ef2df-a2d5-459d-9693-d0ecc9660472,What If?: Serious Scientific Answer to Absurd Hypothetical Questions,"Munroe, Randall",9781848549562,,3c13dfc9-b2a8-4f5c-8bbc-0a4f40422855.jpg
+abbc72d5-4144-4c61-8c1d-6c426d0e1d0b,Talk To Snail,"Clarke, Stephen",055277409X,,e7098733-abda-453a-ba1b-a9bb1e225c60.jpg
+68402623-e74a-461f-8b66-7f385583b326,Da Vinci Code (French Edition),"Brown, Dan",2266198351,,3c2a7396-1e1c-4078-8bcf-d1014e350765.jpg
+197c7a7f-e323-4890-a4f9-967fd08c1d02,Forteresse digitale,"Brown, Dan",2253127078,,94ff6550-4d8b-4c28-8527-da5319638c83.jpg
+d65b21fc-0098-48eb-81bd-e4e10307b97b,The Portable James Joyce,"Joyce, James",9780140150308,,b8da7c43-727c-41bb-a960-98ac965befcf.jpg
+68cb6f8b-1d84-4762-865f-97da68a5bf49,ANGES & DEMONS,"Brown, Dan",2266198122,,e3e57305-cea0-4186-b206-f803e1d0fc51.jpg
+02f57a5b-0d33-4558-91cd-b7ffe352d8c1,Better: A Surgeon's Notes on Performance,"Gawande, Atul",9780805082111,,12ce4368-8fe2-476a-8926-448bc50d15bb.jpg
