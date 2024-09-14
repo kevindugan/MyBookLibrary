@@ -123,8 +123,59 @@ def test_list_books_with_isbn(db_session, helpers):
             {"isbn": None, "unique_id": str(id_list[0]), "title": "Book 1", "author": "Someone", "category": None, "cover_art": None},
         ]
     }
+
+def test_list_book_from_id(db_session, helpers):
+    db_session.add_all([
+        CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
+        CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
+    ])
+    db_session.commit()
+    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(3)]
+    db_session.add_all([
+        BooksTB(title="Book 1", author="Someone", category="1", id=id_list[0]),
+        BooksTB(title="Book 2", author="Someone", category="2", id=id_list[1]),
+        BooksTB(title="Other Book", author="Someone Else", category="2", id=id_list[2]),
+    ])
+    db_session.commit()
     
+    client = helpers.get_client(db_session)
     
+    # List all endpoint
+    response = client.get(f"/api/v1/books?book_id={id_list[1]}")
+    assert response.status_code == 200
+    assert response.json() == {
+        "result": {"unique_id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "Category / Other Sub Category", "cover_art": None, "isbn": None}
+    }
+
+def test_update_book(db_session, helpers):
+    db_session.add_all([
+        CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),
+        CategoriesTB(cat_id="CAT002000", cat_path="Category|Other Sub Category"),
+    ])
+    db_session.commit()
+    id_list = [uuid3(NAMESPACE_OID, f"test {it}") for it in range(3)]
+    db_session.add_all([
+        BooksTB(title="Book 1", author="Someone", id=id_list[0]),
+        BooksTB(title="Book 2", author="Someone", id=id_list[1]),
+        BooksTB(title="Other Book", author="Someone Else", id=id_list[2]),
+    ])
+    db_session.commit()
+    
+    client = helpers.get_client(db_session)
+    
+    # Update Book
+    response = client.put("/api/v1/books", json={"id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "CAT002000"})
+    assert response.status_code == 200
+    assert set(response.json().keys()) == {"id", "title", "author", "category", "cover_art", "isbn"}
+    assert response.json() == {"id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "CAT002000", "cover_art": None, "isbn": None}
+    
+    # Get updated book
+    response = client.get(f"/api/v1/books?book_id={id_list[1]}")
+    assert response.status_code == 200
+    assert response.json() == {
+        "result": {"unique_id": str(id_list[1]), "title": "Book 2", "author": "Someone", "category": "Category / Other Sub Category", "cover_art": None, "isbn": None}
+    }
+
 def test_list_books_by_category(db_session, helpers):
     db_session.add_all([
         CategoriesTB(cat_id="CAT001000", cat_path="Category|Sub Category"),

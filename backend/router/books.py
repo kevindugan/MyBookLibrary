@@ -48,6 +48,34 @@ async def list_books(limit: int = None, db: Session = Depends(get_db)) -> dict:
         } for it in list_results[:limit]
     ]}
 
+@router.get("/")
+async def get_book_by_id(book_id: str, db: Session = Depends(get_db)) -> dict:
+    labels = ["unique_id", "title", "author", "category", "cover_art", "isbn"]
+    sql_query = (
+        select(
+            BooksTB.id,
+            BooksTB.title,
+            BooksTB.author,
+            CategoriesTB.cat_path,
+            BooksTB.cover_art,
+            BooksTB.isbn
+        )
+        .join(CategoriesTB, CategoriesTB.id == BooksTB.category, isouter=True)
+        .where(BooksTB.id == book_id)
+    )
+    
+    try:
+        result = dict(zip(labels,db.execute(sql_query).one()))
+    except exc.OperationalError as e:
+        raise HTTPException(status_code=400, detail="unknown error")
+
+    return {"result":
+        {
+            key: val if key != "category" else (val.replace("|", " / ") if val is not None else None)
+            for key,val in result.items()
+        }
+    }
+
 @router.get("/list-by-category")
 async def list_books_category(limit: int = None, db: Session = Depends(get_db)) -> dict:
     labels = ["unique_id", "title", "author", "cover_art", "category", "isbn"]
@@ -87,32 +115,33 @@ async def add_book(data: BookCreate, db: Session = Depends(get_db)) -> BookItem:
     db_model = {**data.model_dump(), **{"category": cat_id}}
     db.add(BooksTB(**db_model))
     db.commit()
-    
-    
-    
-    # cat_id = db.execute(sql_query).first()[0]
-    # model_dict = data.model_dump()
-    # model_dict["category"] = cat_id
-    # model_dict["id"] = uuid4()
-    # db.add(BooksTB(**model_dict))
-    # db.commit()
-    # return data
+
     return BookItem(**data.model_dump())
 
+@router.put("/")
+async def update_book(data: BookCreate, db: Session = Depends(get_db)) -> BookItem:
+    # Get category id
+    cat_id = None
+    if data.category is not None:
+        cat_id = db.query(CategoriesTB.id) \
+                     .filter(CategoriesTB.cat_id == data.category) \
+                     .one_or_none().id
 
+    db_model = {**data.model_dump(), **{"category": cat_id}}
+    db.query(BooksTB) \
+        .filter(BooksTB.id == data.id) \
+        .update(db_model)
+    db.commit()
+
+    book_model = {**db_model, **{"category": data.category}}
+    return BookItem(**book_model)
 
     # sql_query = (
     #     select(CategoriesTB.id)
-    #     .filter(CategoriesTB.cat_id == data.category)
+    #     .where(CategoriesTB.cat_id == data.category)
     # )
-    # query = db.execute(sql_query).first()
-    # newBook = BooksTB(
-    #     title=data.title,
-    #     author=data.author,
-    #     isbn=data.isbn,
-    #     cover_art=data.cover,
-    #     category=query[0][0]
-    # )
-    # db.add(newBook)
-    # db.commit()
-    # return data
+    # cat_id = db.execute(sql_query).mappings().one_or_none().id
+    # db_model = {**data.model_dump(), **{"category": cat_id}}
+    # # db.
+    # print(db_model)
+    # return BookItem(**db_model)
